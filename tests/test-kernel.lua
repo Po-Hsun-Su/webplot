@@ -1,7 +1,5 @@
 local webplot = require 'webplot'
 
-webplot.start()
-
 local data = torch.Tensor(3,3):fill(1)
 
 webplot.dojob(

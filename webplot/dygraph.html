@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js">
+    </script>
+</head>
+
+<body>
+    <div id="graphdiv"></div>
+    <script type="text/javascript">
+        var data = ${data}
+        var options = ${options}
+        g = new Dygraph(
+            // containing div
+            document.getElementById("graphdiv"),
+            data,
+            options
+        );
+        var ws = new WebSocket("ws://" + window.location.host + window.location.pathname + "ws");
+        function print() {
+            console.log(ws.readyState);
+        }
+        ws.onopen = function() {
+            console.log("opened");
+            print();
+        }
+
+        ws.onmessage = function(msg) {
+            //console.log(msg);
+            var new_data = JSON.parse(msg.data)
+            data.push(new_data)
+            g.updateOptions({
+                'file': data // This slows down over time maybe because it redraws entire data.
+            });
+        }
+
+        ws.onclose = function(event) {
+            console.log(event);
+            console.log("closed");
+            print();
+        }
+    </script>
+</body>
+
+</html>
