@@ -2,7 +2,7 @@ package = "webplot"
 version = "scm-1"
 
 source = {
-   url = "https://github.com/Po-Hsun-Su/webplot",
+   url = "git://github.com/Po-Hsun-Su/webplot",
    tag = "master"
 }
 
