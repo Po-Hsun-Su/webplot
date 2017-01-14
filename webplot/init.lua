@@ -12,4 +12,15 @@ webplot.dojob(
   end
 )
 
+local sys = require 'sys'
+function webplot.open(fig_path)
+  if sys.uname() == 'linux' then
+    sys.execute('xdg-open ' .. webplot.host .. '/' .. fig_path)
+  elseif sys.uname() == "macos" then
+    sys.execute('open ' .. webplot.host .. '/' .. fig_path)
+  else
+    error("Only linux and osx are supported")
+  end
+end
+
 return webplot

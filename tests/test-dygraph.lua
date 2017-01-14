@@ -11,7 +11,7 @@ local fig_path = 'figure1/'
 
 dygraph.add(fig_path, data, options)
 
-sys.execute('xdg-open ' .. webplot.host .. '/' .. fig_path)
+webplot.open(fig_path)
 
 for i = 2, 3000 do
   sys.sleep(0.03)

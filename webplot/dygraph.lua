@@ -39,6 +39,4 @@ function dygraph.append(fig_path, new_data)
     end)
 end
 
-function dygraph.open()
-
 return dygraph
