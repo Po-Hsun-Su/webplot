@@ -2,7 +2,7 @@ package = "webplot"
 version = "scm-1"
 
 source = {
-   url = "https://github.com/Po-Hsun-Su/webplot.git",
+   url = "https://github.com/Po-Hsun-Su/webplot",
    tag = "master"
 }
 
@@ -16,6 +16,11 @@ description = {
 
 dependencies = {
    "torch >= 7.0",
+   "sys >= 1.0",
+   "luasocket >= 2.0",
+   "lua-cjson >= 2.1.0",
+   "async >= 1.0",
+   "threads >= 1.0",
 }
 
 build = {
