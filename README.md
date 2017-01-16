@@ -12,9 +12,12 @@ Features of webplot:
 
 ## Installation
 Install [waffle](https://github.com/benglard/waffle)
+
     luarocks install https://raw.githubusercontent.com/benglard/htmlua/master/htmlua-scm-1.rockspec
     luarocks install https://raw.githubusercontent.com/benglard/waffle/master/waffle-scm-1.rockspec
+
 Install **webplot**
+
     luarocks install https://raw.githubusercontent.com/Po-Hsun-Su/webplot/master/webplot-scm-1.rockspec
 
 ## <a name='examples'></a> Examples
