@@ -3,7 +3,11 @@ local dygraph = require 'webplot.dygraph'
 
 local sys = require 'sys'
 
-local data = {{0, math.sin(0), math.cos(0)}}
+local x = torch.linspace(0,math.pi,100):view(100,1)
+local y1 = torch.sin(x)
+local y2 = torch.cos(x)
+local data = torch.cat({x,y1,y2},2):totable()
+
 local options = {
   labels = {"x", "sin", "cos"}
 }
@@ -13,9 +17,9 @@ dygraph.add(fig_path, data, options)
 
 webplot.open(fig_path)
 
-for i = 2, 3000 do
+for i = 100, 400 do
   sys.sleep(0.03)
-  x = (i-1)*2*math.pi/1000
+  x = i*math.pi/100
   data[i] = {x, math.sin(x),math.cos(x)}
   dygraph.append(fig_path, data[i])
 end

@@ -4,9 +4,8 @@ local data = torch.Tensor(3,3):fill(1)
 
 webplot.dojob(
   function()
-    local _data = data -- share data in main thread to webplot
     app.get('/', function(req, res)
-        res.send(tostring(_data))
+        res.send(tostring(data))
       end)
   end
 )
