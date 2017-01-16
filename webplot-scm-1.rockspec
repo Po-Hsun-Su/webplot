@@ -21,6 +21,7 @@ dependencies = {
    "lua-cjson >= 2.1.0",
    "async >= 1.0",
    "threads >= 1.0",
+   -- Not published dependency: waffle
 }
 
 build = {
